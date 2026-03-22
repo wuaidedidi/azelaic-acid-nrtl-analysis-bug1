@@ -125,6 +125,12 @@ class TestDescriptiveStatistics(_SharedFittingMixin, unittest.TestCase):
         self.assertGreater(desc.loc["mean", "T_K"], 280)
         self.assertLess(desc.loc["mean", "T_K"], 330)
 
+    def test_descriptive_stats_includes_tau_21(self):
+        """测试描述性统计包含 tau_21 列"""
+        desc = self.analyzer.descriptive_statistics()
+        self.assertIn("tau_21", desc.columns, "描述性统计应包含 tau_21 列")
+        self.assertIn("tau_12", desc.columns, "描述性统计应包含 tau_12 列")
+
 
 class TestVantHoffRegression(_SharedFittingMixin, unittest.TestCase):
     """测试 van't Hoff 线性回归"""

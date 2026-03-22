@@ -140,7 +140,7 @@ class SolubilityAnalyzer:
 
     def descriptive_statistics(self) -> pd.DataFrame:
         """对核心数值列进行描述性统计"""
-        cols = ["T_K", "x_exp", "x_calc", "rd_percent", "gamma_1", "tau_12"]
+        cols = ["T_K", "x_exp", "x_calc", "rd_percent", "gamma_1", "tau_12", "tau_21"]
         desc = self.master_df[cols].describe()
         desc.loc["range"] = desc.loc["max"] - desc.loc["min"]
         desc.loc["cv_%"] = (desc.loc["std"] / desc.loc["mean"]).abs() * 100
@@ -330,7 +330,7 @@ class SolubilityAnalyzer:
         path = Path(output_dir)
         path.mkdir(parents=True, exist_ok=True)
         filepath = path / "analysis_master_data.csv"
-        self.master_df.to_csv(filepath, index=False, float_format="%.1e")
+        self.master_df.to_csv(filepath, index=False, float_format="%.6e")
         logger.info("主数据表已导出: %s", filepath)
         return str(filepath)
 

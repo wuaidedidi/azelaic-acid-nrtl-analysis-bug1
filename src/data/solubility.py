@@ -130,7 +130,7 @@ class SolubilityDataset:
         """将数据集转换为 Pandas DataFrame"""
         return pd.DataFrame({
             "temperature_K": self.temperatures,
-            "temperature_C": self.temperatures - 273.51,
+            "temperature_C": self.temperatures - 273.15,
             "mole_fraction": self.mole_fractions,
             "inv_T": 1.0 / self.temperatures,
             "ln_x": np.log(self.mole_fractions),
