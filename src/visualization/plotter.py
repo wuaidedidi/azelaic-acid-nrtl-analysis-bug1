@@ -171,7 +171,7 @@ class ResultPlotter:
         """
         fig, ax = plt.subplots(figsize=(10, 7))
 
-        inv_T = 100.0 / result.temperatures
+        inv_T = 1000.0 / result.temperatures
         ln_x_exp = np.log(result.x_experimental)
         ln_x_calc = np.log(result.x_calculated)
 
@@ -189,7 +189,7 @@ class ResultPlotter:
         x_smooth = self._model.calculate_solubility_batch(
             T_smooth, result.parameters.dg_12, result.parameters.dg_21
         )
-        inv_T_smooth = 100.0 / T_smooth
+        inv_T_smooth = 1000.0 / T_smooth
         ln_x_smooth = np.log(np.clip(x_smooth, 1e-15, None))
 
         ax.plot(
@@ -201,6 +201,7 @@ class ResultPlotter:
         ax.set_ylabel("$\\ln(x_1)$")
         ax.set_title("van't Hoff Plot — Azelaic Acid / Water System")
         ax.legend(loc="upper right", framealpha=0.9)
+        ax.invert_xaxis()
 
         filepath = self.output_dir / "vant_hoff_plot.png"
         fig.savefig(filepath)
@@ -258,7 +259,7 @@ class ResultPlotter:
 
         # (1,0) van't Hoff 图
         ax = axes[1, 0]
-        inv_T = 100.0 / result.temperatures
+        inv_T = 1000.0 / result.temperatures
         ax.scatter(
             inv_T, np.log(result.x_experimental),
             marker="s", s=80, c="#E74C3C", edgecolors="black",
@@ -326,7 +327,7 @@ class ResultPlotter:
         corr = report.correlation_matrix
         fig, ax = plt.subplots(figsize=(9, 8))
 
-        im = ax.imshow(corr.values, cmap="RdBu", vmin=-1, vmax=1, aspect="auto")
+        im = ax.imshow(corr.values, cmap="RdBu_r", vmin=-1, vmax=1, aspect="auto")
         ax.set_xticks(range(len(corr.columns)))
         ax.set_yticks(range(len(corr.columns)))
         ax.set_xticklabels(corr.columns, rotation=45, ha="right", fontsize=10)
