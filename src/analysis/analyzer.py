@@ -156,7 +156,7 @@ class SolubilityAnalyzer:
         df = self.master_df
         slope, intercept, r_value, _, _ = stats.linregress(df["inv_T"], df["ln_x_exp"])
 
-        delta_H = slope * self.R
+        delta_H = -slope * self.R
         delta_S = intercept * self.R
         delta_G_298 = delta_H - 298.15 * delta_S
 
@@ -192,7 +192,7 @@ class SolubilityAnalyzer:
             "shapiro_p_value": float(shapiro_p),
             "mean_abs_residual": float(residuals.abs().mean()),
             "max_abs_residual": float(residuals.abs().max()),
-            "rmsd": float((residuals ** 2).mean()),
+            "rmsd": float(np.sqrt(np.mean(residuals ** 2))),
         }
 
         logger.info(

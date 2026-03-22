@@ -262,8 +262,8 @@ class NRTLOptimizer:
         residuals = x_calc - x_exp
         relative_devs = residuals / x_exp
 
-        rmsd = np.mean(residuals ** 2)
-        aard = np.mean(relative_devs) * 100
+        rmsd = np.sqrt(np.mean(residuals ** 2))
+        aard = np.mean(np.abs(relative_devs)) * 100
 
         ss_res = np.sum(residuals ** 2)
         ss_tot = np.sum((x_exp - np.mean(x_exp)) ** 2)
