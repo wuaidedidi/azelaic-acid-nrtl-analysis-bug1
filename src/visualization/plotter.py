@@ -357,7 +357,7 @@ class ResultPlotter:
             s12.perturbations * 100, s12.aard_values,
             "o-", color="#E74C3C", linewidth=2, markersize=5,
         )
-        ax1.axvline(x=5, color="gray", linestyle="--", alpha=0.5)
+        ax1.axvline(x=0, color="gray", linestyle="--", alpha=0.5)
         ax1.axhline(y=s12.aard_values[len(s12.aard_values) // 2], color="gray",
                      linestyle=":", alpha=0.5)
         ax1.set_xlabel("$\\Delta g_{12}$ Perturbation (%)")
@@ -372,7 +372,7 @@ class ResultPlotter:
             s21.perturbations * 100, s21.aard_values,
             "s-", color="#2E86C1", linewidth=2, markersize=5,
         )
-        ax2.axvline(x=5, color="gray", linestyle="--", alpha=0.5)
+        ax2.axvline(x=0, color="gray", linestyle="--", alpha=0.5)
         ax2.axhline(y=s21.aard_values[len(s21.aard_values) // 2], color="gray",
                      linestyle=":", alpha=0.5)
         ax2.set_xlabel("$\\Delta g_{21}$ Perturbation (%)")
@@ -383,7 +383,7 @@ class ResultPlotter:
         )
 
         fig.suptitle(
-            "NRTL Parameter Sensitivity Analysis", fontsize=14, fontweight="bold"
+            "NRTL Parameter Sensitivity Analysis (±10%)", fontsize=14, fontweight="bold"
         )
         plt.tight_layout(rect=[0, 0, 1, 0.94])
 
