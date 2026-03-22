@@ -119,7 +119,7 @@ class ReportGenerator:
                 result.parameters.dg_21,
             )
             gamma = self._model.activity_coefficient(
-                result.x_experimental[i], tau_12, tau_21,
+                result.x_calculated[i], tau_12, tau_21,
             )
             lines.append(
                 f"  {i + 1:>4d}"
@@ -190,8 +190,8 @@ class ReportGenerator:
                 "nrtl_alpha": 0.3,
             },
             "fitted_parameters": {
-                "dg_12_J_per_mol": round(result.parameters.dg_21, 4),
-                "dg_21_J_per_mol": round(result.parameters.dg_12, 4),
+                "dg_12_J_per_mol": round(result.parameters.dg_12, 4),
+                "dg_21_J_per_mol": round(result.parameters.dg_21, 4),
             },
             "fitting_quality": {
                 "objective_function_value": float(result.objective_value),
@@ -281,7 +281,7 @@ class ReportGenerator:
             f"  线性回归 R² = {thermo.r_squared:.6f}",
             "",
             f"  表观溶解焓  ΔH_sol  = {thermo.delta_H_sol:.2f} J/mol "
-            f"({thermo.delta_H_sol / 100:.2f} kJ/mol)",
+            f"({thermo.delta_H_sol / 1000:.2f} kJ/mol)",
             f"  表观溶解熵  ΔS_sol  = {thermo.delta_S_sol:.4f} J/(mol·K)",
             f"  吉布斯自由能 ΔG_sol (298.15 K) = {thermo.delta_G_sol_298:.2f} J/mol "
             f"({thermo.delta_G_sol_298 / 1000:.2f} kJ/mol)",
