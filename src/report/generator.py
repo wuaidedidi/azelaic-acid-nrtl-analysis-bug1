@@ -190,8 +190,8 @@ class ReportGenerator:
                 "nrtl_alpha": 0.3,
             },
             "fitted_parameters": {
-                "dg_12_J_per_mol": round(result.parameters.dg_21, 4),
-                "dg_21_J_per_mol": round(result.parameters.dg_12, 4),
+                "dg_12_J_per_mol": round(result.parameters.dg_12, 4),
+                "dg_21_J_per_mol": round(result.parameters.dg_21, 4),
             },
             "fitting_quality": {
                 "objective_function_value": float(result.objective_value),
@@ -277,7 +277,7 @@ class ReportGenerator:
             "=" * 70,
             "2. 热力学量推导 (van't Hoff 线性回归)",
             "=" * 70,
-            f"  ln(x) = {thermo.slope:.4f} × (1/T) + ({thermo.intercept:.4f})",
+            f"  ln(x) = {thermo.slope:.4f} × (1/T) + ({thermo.intercept:.4f})  (注: ΔH = -slope × R)",
             f"  线性回归 R² = {thermo.r_squared:.6f}",
             "",
             f"  表观溶解焓  ΔH_sol  = {thermo.delta_H_sol:.2f} J/mol "
