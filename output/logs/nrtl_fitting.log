@@ -1,0 +1,468 @@
+2026-03-22 06:45:28 | INFO     | nrtl_fitting.main         | ======================================================================
+2026-03-22 06:45:28 | INFO     | nrtl_fitting.main         | 壬二酸 (Azelaic Acid) / 水 (Water) 体系
+2026-03-22 06:45:28 | INFO     | nrtl_fitting.main         | NRTL 模型参数拟合程序启动
+2026-03-22 06:45:28 | INFO     | nrtl_fitting.main         | ======================================================================
+2026-03-22 06:45:28 | INFO     | nrtl_fitting.main         | ━━━ Step 1: 加载实验数据 ━━━
+2026-03-22 06:45:28 | INFO     | nrtl_fitting.data.solubility | 已加载 9 个溶解度实验数据点
+2026-03-22 06:45:28 | INFO     | nrtl_fitting.data.solubility | 温度范围: 283.15 K ~ 323.15 K
+2026-03-22 06:45:28 | INFO     | nrtl_fitting.data.solubility | 摩尔分数范围: 7.1400e-05 ~ 9.8490e-04
+2026-03-22 06:45:28 | INFO     | nrtl_fitting.main         | 
+=================================================================
+壬二酸 (Azelaic Acid) 在水中的溶解度实验数据
+=================================================================
+      温度 (K)           摩尔分数 x
+-----------------------------------
+      283.15       7.1400e-05
+      288.15       9.1890e-05
+      293.15       1.4760e-04
+      298.15       1.7030e-04
+      303.15       2.1860e-04
+      308.15       2.8910e-04
+      313.15       3.5020e-04
+      318.15       4.9740e-04
+      323.15       9.8490e-04
+-----------------------------------
+共 9 个数据点
+=================================================================
+2026-03-22 06:45:28 | INFO     | nrtl_fitting.main         | ━━━ Step 2: 初始化热力学常数 ━━━
+2026-03-22 06:45:28 | INFO     | nrtl_fitting.data.solubility | 热力学常数校验通过: T_m=379.65 K, ΔH_fus=34500 J/mol, R=8.314, α=0.3
+2026-03-22 06:45:28 | INFO     | nrtl_fitting.main         | ━━━ Step 3: 执行 NRTL 参数拟合 ━━━
+2026-03-22 06:45:28 | INFO     | nrtl_fitting.data.solubility | 热力学常数校验通过: T_m=379.65 K, ΔH_fus=34500 J/mol, R=8.314, α=0.3
+2026-03-22 06:45:28 | INFO     | nrtl_fitting.models.nrtl  | NRTL 模型初始化完成，α = 0.30
+2026-03-22 06:45:28 | INFO     | nrtl_fitting.fitting.optimizer | 优化器初始化: 9 个数据点, Δg₁₂ 范围 (-50000.0, 50000.0), Δg₂₁ 范围 (-50000.0, 50000.0)
+2026-03-22 06:45:28 | INFO     | nrtl_fitting.fitting.optimizer | ━━━ 阶段 1: 差分进化全局搜索 ━━━
+2026-03-22 06:45:30 | INFO     | nrtl_fitting.fitting.optimizer | DE 完成: Δg₁₂=15658.49, Δg₂₁=11747.58, OF=1.506495e-01, 函数评估=3450
+2026-03-22 06:45:30 | INFO     | nrtl_fitting.fitting.optimizer | ━━━ 阶段 2: L-BFGS-B 局部精细优化 ━━━
+2026-03-22 06:45:30 | INFO     | nrtl_fitting.fitting.optimizer | 局部优化完成: Δg₁₂=15658.49, Δg₂₁=11747.58, OF=1.506495e-01, 额外评估=27
+2026-03-22 06:45:30 | INFO     | nrtl_fitting.fitting.optimizer | 拟合质量: RMSD=1.0046e-04, AARD=9.6504%, R²=0.86055331
+2026-03-22 06:45:30 | INFO     | nrtl_fitting.main         | 
+======================================================================
+NRTL 模型参数拟合结果
+壬二酸 (Azelaic Acid) / 水 (Water) 二元体系
+======================================================================
+
+━━━ 拟合参数 (能量交互参数) ━━━
+  Δg₁₂ (dg_12)  =     15658.49 J/mol
+  Δg₂₁ (dg_21)  =     11747.58 J/mol
+  α             = 0.3 (fixed)
+
+━━━ 拟合质量指标 ━━━
+  目标函数值 (OF)        = 1.506495e-01
+  均方根偏差 (RMSD)      = 1.004553e-04
+  平均绝对相对偏差 (AARD) = 9.6504 %
+  决定系数 (R²)          = 0.86055331
+
+━━━ 逐点对比 ━━━
+       T (K)         x_exp        x_calc      RD (%)       τ₁₂       τ₂₁
+  ----------------------------------------------------------------------
+      283.15    7.1400e-05    6.6612e-05     -6.7057    6.6516    4.9902
+      288.15    9.1890e-05    9.2309e-05      0.4556    6.5361    4.9037
+      293.15    1.4760e-04    1.2654e-04    -14.2661    6.4247    4.8200
+      298.15    1.7030e-04    1.7172e-04      0.8333    6.3169    4.7392
+      303.15    2.1860e-04    2.3080e-04      5.5832    6.2127    4.6610
+      308.15    2.8910e-04    3.0745e-04      6.3466    6.1119    4.5854
+      313.15    3.5020e-04    4.0611e-04     15.9655    6.0143    4.5122
+      318.15    4.9740e-04    5.3224e-04      7.0038    5.9198    4.4413
+      323.15    9.8490e-04    6.9245e-04    -29.6935    5.8282    4.3725
+  ----------------------------------------------------------------------
+                最大相对偏差 = 29.6935 %
+                最小相对偏差 = 0.4556 %
+
+  收敛信息: CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH
+  迭代次数: 1
+======================================================================
+2026-03-22 06:45:30 | INFO     | nrtl_fitting.main         | ━━━ Step 4: 生成可视化图表 ━━━
+2026-03-22 06:45:30 | INFO     | nrtl_fitting.data.solubility | 热力学常数校验通过: T_m=379.65 K, ΔH_fus=34500 J/mol, R=8.314, α=0.3
+2026-03-22 06:45:30 | INFO     | nrtl_fitting.models.nrtl  | NRTL 模型初始化完成，α = 0.30
+2026-03-22 06:45:30 | INFO     | nrtl_fitting.visualization.plotter | 图表输出目录: /app/output/figures
+2026-03-22 06:45:30 | INFO     | nrtl_fitting.visualization.plotter | 溶解度对比图已保存: output/figures/solubility_comparison.png
+2026-03-22 06:45:30 | INFO     | nrtl_fitting.visualization.plotter | 相对偏差图已保存: output/figures/relative_deviation.png
+2026-03-22 06:45:31 | INFO     | nrtl_fitting.visualization.plotter | van't Hoff 图已保存: output/figures/vant_hoff_plot.png
+2026-03-22 06:45:31 | INFO     | nrtl_fitting.visualization.plotter | 综合仪表板已保存: output/figures/fitting_dashboard.png
+2026-03-22 06:45:31 | INFO     | nrtl_fitting.visualization.plotter | 所有图表已生成完毕
+2026-03-22 06:45:31 | INFO     | nrtl_fitting.main         | ━━━ Step 5: 数据分析 (Pandas) ━━━
+2026-03-22 06:45:31 | INFO     | nrtl_fitting.data.solubility | 热力学常数校验通过: T_m=379.65 K, ΔH_fus=34500 J/mol, R=8.314, α=0.3
+2026-03-22 06:45:31 | INFO     | nrtl_fitting.models.nrtl  | NRTL 模型初始化完成，α = 0.30
+2026-03-22 06:45:31 | INFO     | nrtl_fitting.analysis.analyzer | 分析器初始化完成，共 9 个数据点
+2026-03-22 06:45:31 | INFO     | nrtl_fitting.analysis.analyzer | ==================================================
+2026-03-22 06:45:31 | INFO     | nrtl_fitting.analysis.analyzer | 开始执行完整数据分析...
+2026-03-22 06:45:31 | INFO     | nrtl_fitting.analysis.analyzer | ==================================================
+2026-03-22 06:45:31 | INFO     | nrtl_fitting.analysis.analyzer | 主数据表构建完成: 9 行 × 19 列
+2026-03-22 06:45:31 | INFO     | nrtl_fitting.analysis.analyzer | 描述性统计完成
+2026-03-22 06:45:31 | INFO     | nrtl_fitting.analysis.analyzer | van't Hoff 回归: ΔH_sol=45053.8 J/mol, ΔS_sol=79.23 J/(mol·K), R²=0.966423
+2026-03-22 06:45:31 | INFO     | nrtl_fitting.analysis.analyzer | 残差分析: 均值偏差=-1.6086%, 标准差=13.6162%, 偏度=-1.1044
+2026-03-22 06:45:31 | WARNING  | nrtl_fitting.analysis.analyzer | 检测到 1 个潜在异常点 (Z>2.0): 索引 [8]
+2026-03-22 06:45:31 | INFO     | nrtl_fitting.analysis.analyzer | 灵敏度分析完成: Δg₁₂ 梯度=0.000875, Δg₂₁ 梯度=-0.008540
+2026-03-22 06:45:31 | INFO     | nrtl_fitting.analysis.analyzer | 温度分组分析完成: 3 个分组
+2026-03-22 06:45:31 | INFO     | nrtl_fitting.analysis.analyzer | 相关性分析完成: 7 × 7 矩阵
+2026-03-22 06:45:31 | INFO     | nrtl_fitting.analysis.analyzer | 完整数据分析已完成
+2026-03-22 06:45:31 | INFO     | nrtl_fitting.analysis.analyzer | 主数据表已导出: output/analysis_master_data.csv
+2026-03-22 06:45:31 | INFO     | nrtl_fitting.analysis.analyzer | ==================================================
+2026-03-22 06:45:31 | INFO     | nrtl_fitting.analysis.analyzer | 开始执行完整数据分析...
+2026-03-22 06:45:31 | INFO     | nrtl_fitting.analysis.analyzer | ==================================================
+2026-03-22 06:45:31 | INFO     | nrtl_fitting.analysis.analyzer | 描述性统计完成
+2026-03-22 06:45:31 | INFO     | nrtl_fitting.analysis.analyzer | van't Hoff 回归: ΔH_sol=45053.8 J/mol, ΔS_sol=79.23 J/(mol·K), R²=0.966423
+2026-03-22 06:45:31 | INFO     | nrtl_fitting.analysis.analyzer | 残差分析: 均值偏差=-1.6086%, 标准差=13.6162%, 偏度=-1.1044
+2026-03-22 06:45:31 | WARNING  | nrtl_fitting.analysis.analyzer | 检测到 1 个潜在异常点 (Z>2.0): 索引 [8]
+2026-03-22 06:45:31 | INFO     | nrtl_fitting.analysis.analyzer | 灵敏度分析完成: Δg₁₂ 梯度=0.000875, Δg₂₁ 梯度=-0.008540
+2026-03-22 06:45:31 | INFO     | nrtl_fitting.analysis.analyzer | 温度分组分析完成: 3 个分组
+2026-03-22 06:45:31 | INFO     | nrtl_fitting.analysis.analyzer | 相关性分析完成: 7 × 7 矩阵
+2026-03-22 06:45:31 | INFO     | nrtl_fitting.analysis.analyzer | 完整数据分析已完成
+2026-03-22 06:45:31 | INFO     | nrtl_fitting.analysis.analyzer | 分析报告 JSON 已导出: output/analysis_report.json
+2026-03-22 06:45:31 | INFO     | nrtl_fitting.main         |   DataFrame 形状: (9, 19)
+2026-03-22 06:45:31 | INFO     | nrtl_fitting.main         |   热力学推导: ΔH_sol=45053.83 J/mol, ΔS_sol=79.2326 J/(mol·K)
+2026-03-22 06:45:31 | INFO     | nrtl_fitting.main         | ━━━ Step 6: 生成分析图表 ━━━
+2026-03-22 06:45:32 | INFO     | nrtl_fitting.visualization.plotter | 相关性热力图已保存: output/figures/correlation_heatmap.png
+2026-03-22 06:45:32 | INFO     | nrtl_fitting.visualization.plotter | 灵敏度分析图已保存: output/figures/parameter_sensitivity.png
+2026-03-22 06:45:32 | INFO     | nrtl_fitting.visualization.plotter | 残差分布图已保存: output/figures/residual_distribution.png
+2026-03-22 06:45:33 | INFO     | nrtl_fitting.visualization.plotter | 分析综合仪表板已保存: output/figures/analysis_dashboard.png
+2026-03-22 06:45:33 | INFO     | nrtl_fitting.visualization.plotter | 所有分析图表已生成完毕
+2026-03-22 06:45:33 | INFO     | nrtl_fitting.main         | ━━━ Step 7: 生成报告 ━━━
+2026-03-22 06:45:33 | INFO     | nrtl_fitting.data.solubility | 热力学常数校验通过: T_m=379.65 K, ΔH_fus=34500 J/mol, R=8.314, α=0.3
+2026-03-22 06:45:33 | INFO     | nrtl_fitting.models.nrtl  | NRTL 模型初始化完成，α = 0.30
+2026-03-22 06:45:33 | INFO     | nrtl_fitting.report.generator | 报告输出目录: /app/output
+2026-03-22 06:45:33 | INFO     | nrtl_fitting.report.generator | 文本报告已保存: output/fitting_report.txt
+2026-03-22 06:45:33 | INFO     | nrtl_fitting.report.generator | JSON 报告已保存: output/fitting_result.json
+2026-03-22 06:45:33 | INFO     | nrtl_fitting.report.generator | CSV 数据已保存 (Pandas): output/fitting_data.csv
+2026-03-22 06:45:33 | INFO     | nrtl_fitting.report.generator | 所有报告文件已生成完毕
+2026-03-22 06:45:33 | INFO     | nrtl_fitting.report.generator | 数据分析摘要已保存: output/analysis_summary.txt
+2026-03-22 06:45:33 | INFO     | nrtl_fitting.main         | 
+2026-03-22 06:45:33 | INFO     | nrtl_fitting.main         | ======================================================================
+2026-03-22 06:45:33 | INFO     | nrtl_fitting.main         | 拟合与分析完成！总耗时: 5.58 秒
+2026-03-22 06:45:33 | INFO     | nrtl_fitting.main         | ======================================================================
+2026-03-22 06:45:33 | INFO     | nrtl_fitting.main         | 拟合结果:
+2026-03-22 06:45:33 | INFO     | nrtl_fitting.main         |   Δg₁₂ = 15658.49 J/mol
+2026-03-22 06:45:33 | INFO     | nrtl_fitting.main         |   Δg₂₁ = 11747.58 J/mol
+2026-03-22 06:45:33 | INFO     | nrtl_fitting.main         |   τ₁₂ 范围: 5.8282 ~ 6.6516
+2026-03-22 06:45:33 | INFO     | nrtl_fitting.main         |   τ₂₁ 范围: 4.3725 ~ 4.9902
+2026-03-22 06:45:33 | INFO     | nrtl_fitting.main         |   AARD = 9.6504 %
+2026-03-22 06:45:33 | INFO     | nrtl_fitting.main         |   R²   = 0.86055331
+2026-03-22 06:45:33 | INFO     | nrtl_fitting.main         | 
+2026-03-22 06:45:33 | INFO     | nrtl_fitting.main         | 数据分析结果:
+2026-03-22 06:45:33 | INFO     | nrtl_fitting.main         |   ΔH_sol = 45.05 kJ/mol
+2026-03-22 06:45:33 | INFO     | nrtl_fitting.main         |   ΔS_sol = 79.23 J/(mol·K)
+2026-03-22 06:45:33 | INFO     | nrtl_fitting.main         |   ΔG_sol(298K) = 21.43 kJ/mol
+2026-03-22 06:45:33 | INFO     | nrtl_fitting.main         |   异常点数: 1
+2026-03-22 06:45:33 | INFO     | nrtl_fitting.main         | 
+2026-03-22 06:45:33 | INFO     | nrtl_fitting.main         | 输出文件:
+2026-03-22 06:45:33 | INFO     | nrtl_fitting.main         |   报告:     output/fitting_report.txt
+2026-03-22 06:45:33 | INFO     | nrtl_fitting.main         |   分析摘要: output/analysis_summary.txt
+2026-03-22 06:45:33 | INFO     | nrtl_fitting.main         |   数据:     output/fitting_result.json
+2026-03-22 06:45:33 | INFO     | nrtl_fitting.main         |   分析JSON: output/analysis_report.json
+2026-03-22 06:45:33 | INFO     | nrtl_fitting.main         |   CSV:      output/fitting_data.csv
+2026-03-22 06:45:33 | INFO     | nrtl_fitting.main         |   主数据表: output/analysis_master_data.csv
+2026-03-22 06:45:33 | INFO     | nrtl_fitting.main         |   图表:     output/figures/
+2026-03-22 06:45:33 | INFO     | nrtl_fitting.main         |   日志:     output/logs/nrtl_fitting.log
+2026-03-22 06:45:33 | INFO     | nrtl_fitting.main         | ======================================================================
+2026-03-22 07:23:49 | INFO     | nrtl_fitting.main         | ======================================================================
+2026-03-22 07:23:49 | INFO     | nrtl_fitting.main         | 壬二酸 (Azelaic Acid) / 水 (Water) 体系
+2026-03-22 07:23:49 | INFO     | nrtl_fitting.main         | NRTL 模型参数拟合程序启动
+2026-03-22 07:23:49 | INFO     | nrtl_fitting.main         | ======================================================================
+2026-03-22 07:23:49 | INFO     | nrtl_fitting.main         | ━━━ Step 1: 加载实验数据 ━━━
+2026-03-22 07:23:49 | INFO     | nrtl_fitting.data.solubility | 已加载 9 个溶解度实验数据点
+2026-03-22 07:23:49 | INFO     | nrtl_fitting.data.solubility | 温度范围: 283.15 K ~ 323.15 K
+2026-03-22 07:23:49 | INFO     | nrtl_fitting.data.solubility | 摩尔分数范围: 7.1400e-05 ~ 9.8490e-04
+2026-03-22 07:23:49 | INFO     | nrtl_fitting.main         | 
+=================================================================
+壬二酸 (Azelaic Acid) 在水中的溶解度实验数据
+=================================================================
+      温度 (K)           摩尔分数 x
+-----------------------------------
+      283.15       7.1400e-05
+      288.15       9.1890e-05
+      293.15       1.4760e-04
+      298.15       1.7030e-04
+      303.15       2.1860e-04
+      308.15       2.8910e-04
+      313.15       3.5020e-04
+      318.15       4.9740e-04
+      323.15       9.8490e-04
+-----------------------------------
+共 9 个数据点
+=================================================================
+2026-03-22 07:23:49 | INFO     | nrtl_fitting.main         | ━━━ Step 2: 初始化热力学常数 ━━━
+2026-03-22 07:23:49 | INFO     | nrtl_fitting.data.solubility | 热力学常数校验通过: T_m=379.65 K, ΔH_fus=34500 J/mol, R=8.314, α=0.3
+2026-03-22 07:23:49 | INFO     | nrtl_fitting.main         | ━━━ Step 3: 执行 NRTL 参数拟合 ━━━
+2026-03-22 07:23:49 | INFO     | nrtl_fitting.data.solubility | 热力学常数校验通过: T_m=379.65 K, ΔH_fus=34500 J/mol, R=8.314, α=0.3
+2026-03-22 07:23:49 | INFO     | nrtl_fitting.models.nrtl  | NRTL 模型初始化完成，α = 0.30
+2026-03-22 07:23:49 | INFO     | nrtl_fitting.fitting.optimizer | 优化器初始化: 9 个数据点, Δg₁₂ 范围 (-50000.0, 50000.0), Δg₂₁ 范围 (-50000.0, 50000.0)
+2026-03-22 07:23:49 | INFO     | nrtl_fitting.fitting.optimizer | ━━━ 阶段 1: 差分进化全局搜索 ━━━
+2026-03-22 07:23:52 | INFO     | nrtl_fitting.fitting.optimizer | DE 完成: Δg₁₂=15658.49, Δg₂₁=11747.58, OF=1.506495e-01, 函数评估=3450
+2026-03-22 07:23:52 | INFO     | nrtl_fitting.fitting.optimizer | ━━━ 阶段 2: L-BFGS-B 局部精细优化 ━━━
+2026-03-22 07:23:52 | INFO     | nrtl_fitting.fitting.optimizer | 局部优化完成: Δg₁₂=15658.49, Δg₂₁=11747.58, OF=1.506495e-01, 额外评估=27
+2026-03-22 07:23:52 | INFO     | nrtl_fitting.fitting.optimizer | 拟合质量: RMSD=1.0091e-08, AARD=-1.6086%, R²=0.86055331
+2026-03-22 07:23:52 | INFO     | nrtl_fitting.main         | 
+======================================================================
+NRTL 模型参数拟合结果
+壬二酸 (Azelaic Acid) / 水 (Water) 二元体系
+======================================================================
+
+━━━ 拟合参数 (能量交互参数) ━━━
+  Δg₁₂ (dg_12)  =     15658.49 J/mol
+  Δg₂₁ (dg_21)  =     11747.58 J/mol
+  α             = 0.3 (fixed)
+
+━━━ 拟合质量指标 ━━━
+  目标函数值 (OF)        = 1.506495e-01
+  均方根偏差 (RMSD)      = 1.009126e-08
+  平均绝对相对偏差 (AARD) = -1.6086 %
+  决定系数 (R²)          = 0.86055331
+
+━━━ 逐点对比 ━━━
+       T (K)         x_exp        x_calc      RD (%)       τ₁₂       τ₂₁
+  ----------------------------------------------------------------------
+      283.15    7.1400e-05    6.6612e-05     -6.7057    6.6516    4.9902
+      288.15    9.1890e-05    9.2309e-05      0.4556    6.5361    4.9037
+      293.15    1.4760e-04    1.2654e-04    -14.2661    6.4247    4.8200
+      298.15    1.7030e-04    1.7172e-04      0.8333    6.3169    4.7392
+      303.15    2.1860e-04    2.3080e-04      5.5832    6.2127    4.6610
+      308.15    2.8910e-04    3.0745e-04      6.3466    6.1119    4.5854
+      313.15    3.5020e-04    4.0611e-04     15.9655    6.0143    4.5122
+      318.15    4.9740e-04    5.3224e-04      7.0038    5.9198    4.4413
+      323.15    9.8490e-04    6.9245e-04    -29.6935    5.8282    4.3725
+  ----------------------------------------------------------------------
+                最大相对偏差 = 29.6935 %
+                最小相对偏差 = 0.4556 %
+
+  收敛信息: CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH
+  迭代次数: 1
+======================================================================
+2026-03-22 07:23:52 | INFO     | nrtl_fitting.main         | ━━━ Step 4: 生成可视化图表 ━━━
+2026-03-22 07:23:52 | INFO     | nrtl_fitting.data.solubility | 热力学常数校验通过: T_m=379.65 K, ΔH_fus=34500 J/mol, R=8.314, α=0.3
+2026-03-22 07:23:52 | INFO     | nrtl_fitting.models.nrtl  | NRTL 模型初始化完成，α = 0.30
+2026-03-22 07:23:52 | INFO     | nrtl_fitting.visualization.plotter | 图表输出目录: /app/output/figures
+2026-03-22 07:23:52 | INFO     | nrtl_fitting.visualization.plotter | 溶解度对比图已保存: output/figures/solubility_comparison.png
+2026-03-22 07:23:52 | INFO     | nrtl_fitting.visualization.plotter | 相对偏差图已保存: output/figures/relative_deviation.png
+2026-03-22 07:23:52 | INFO     | nrtl_fitting.visualization.plotter | van't Hoff 图已保存: output/figures/vant_hoff_plot.png
+2026-03-22 07:23:53 | INFO     | nrtl_fitting.visualization.plotter | 综合仪表板已保存: output/figures/fitting_dashboard.png
+2026-03-22 07:23:53 | INFO     | nrtl_fitting.visualization.plotter | 所有图表已生成完毕
+2026-03-22 07:23:53 | INFO     | nrtl_fitting.main         | ━━━ Step 5: 数据分析 (Pandas) ━━━
+2026-03-22 07:23:53 | INFO     | nrtl_fitting.data.solubility | 热力学常数校验通过: T_m=379.65 K, ΔH_fus=34500 J/mol, R=8.314, α=0.3
+2026-03-22 07:23:53 | INFO     | nrtl_fitting.models.nrtl  | NRTL 模型初始化完成，α = 0.30
+2026-03-22 07:23:53 | INFO     | nrtl_fitting.analysis.analyzer | 分析器初始化完成，共 9 个数据点
+2026-03-22 07:23:53 | INFO     | nrtl_fitting.analysis.analyzer | ==================================================
+2026-03-22 07:23:53 | INFO     | nrtl_fitting.analysis.analyzer | 开始执行完整数据分析...
+2026-03-22 07:23:53 | INFO     | nrtl_fitting.analysis.analyzer | ==================================================
+2026-03-22 07:23:53 | INFO     | nrtl_fitting.analysis.analyzer | 主数据表构建完成: 9 行 × 19 列
+2026-03-22 07:23:53 | INFO     | nrtl_fitting.analysis.analyzer | 描述性统计完成
+2026-03-22 07:23:53 | INFO     | nrtl_fitting.analysis.analyzer | van't Hoff 回归: ΔH_sol=-45053.8 J/mol, ΔS_sol=79.23 J/(mol·K), R²=0.966423
+2026-03-22 07:23:53 | INFO     | nrtl_fitting.analysis.analyzer | 残差分析: 均值偏差=-0.0161%, 标准差=0.1362%, 偏度=-1.1044
+2026-03-22 07:23:53 | WARNING  | nrtl_fitting.analysis.analyzer | 检测到 6 个潜在异常点 (Z>0.5): 索引 [2, 4, 5, 6, 7, 8]
+2026-03-22 07:23:53 | INFO     | nrtl_fitting.analysis.analyzer | 灵敏度分析完成: Δg₁₂ 梯度=0.002680, Δg₂₁ 梯度=0.023851
+2026-03-22 07:23:53 | INFO     | nrtl_fitting.analysis.analyzer | 温度分组分析完成: 3 个分组
+2026-03-22 07:23:53 | INFO     | nrtl_fitting.analysis.analyzer | 相关性分析完成: 7 × 7 矩阵
+2026-03-22 07:23:53 | INFO     | nrtl_fitting.analysis.analyzer | 完整数据分析已完成
+2026-03-22 07:23:53 | INFO     | nrtl_fitting.analysis.analyzer | 主数据表已导出: output/analysis_master_data.csv
+2026-03-22 07:23:53 | INFO     | nrtl_fitting.analysis.analyzer | ==================================================
+2026-03-22 07:23:53 | INFO     | nrtl_fitting.analysis.analyzer | 开始执行完整数据分析...
+2026-03-22 07:23:53 | INFO     | nrtl_fitting.analysis.analyzer | ==================================================
+2026-03-22 07:23:53 | INFO     | nrtl_fitting.analysis.analyzer | 描述性统计完成
+2026-03-22 07:23:53 | INFO     | nrtl_fitting.analysis.analyzer | van't Hoff 回归: ΔH_sol=-45053.8 J/mol, ΔS_sol=79.23 J/(mol·K), R²=0.966423
+2026-03-22 07:23:53 | INFO     | nrtl_fitting.analysis.analyzer | 残差分析: 均值偏差=-0.0161%, 标准差=0.1362%, 偏度=-1.1044
+2026-03-22 07:23:53 | WARNING  | nrtl_fitting.analysis.analyzer | 检测到 6 个潜在异常点 (Z>0.5): 索引 [2, 4, 5, 6, 7, 8]
+2026-03-22 07:23:53 | INFO     | nrtl_fitting.analysis.analyzer | 灵敏度分析完成: Δg₁₂ 梯度=0.002680, Δg₂₁ 梯度=0.023851
+2026-03-22 07:23:53 | INFO     | nrtl_fitting.analysis.analyzer | 温度分组分析完成: 3 个分组
+2026-03-22 07:23:53 | INFO     | nrtl_fitting.analysis.analyzer | 相关性分析完成: 7 × 7 矩阵
+2026-03-22 07:23:53 | INFO     | nrtl_fitting.analysis.analyzer | 完整数据分析已完成
+2026-03-22 07:23:53 | INFO     | nrtl_fitting.analysis.analyzer | 分析报告 JSON 已导出: output/analysis_report.json
+2026-03-22 07:23:53 | INFO     | nrtl_fitting.main         |   DataFrame 形状: (9, 19)
+2026-03-22 07:23:53 | INFO     | nrtl_fitting.main         |   热力学推导: ΔH_sol=-45053.83 J/mol, ΔS_sol=79.2326 J/(mol·K)
+2026-03-22 07:23:53 | INFO     | nrtl_fitting.main         | ━━━ Step 6: 生成分析图表 ━━━
+2026-03-22 07:23:53 | INFO     | nrtl_fitting.visualization.plotter | 相关性热力图已保存: output/figures/correlation_heatmap.png
+2026-03-22 07:23:54 | INFO     | nrtl_fitting.visualization.plotter | 灵敏度分析图已保存: output/figures/parameter_sensitivity.png
+2026-03-22 07:23:54 | INFO     | nrtl_fitting.visualization.plotter | 残差分布图已保存: output/figures/residual_distribution.png
+2026-03-22 07:23:55 | INFO     | nrtl_fitting.visualization.plotter | 分析综合仪表板已保存: output/figures/analysis_dashboard.png
+2026-03-22 07:23:55 | INFO     | nrtl_fitting.visualization.plotter | 所有分析图表已生成完毕
+2026-03-22 07:23:55 | INFO     | nrtl_fitting.main         | ━━━ Step 7: 生成报告 ━━━
+2026-03-22 07:23:55 | INFO     | nrtl_fitting.data.solubility | 热力学常数校验通过: T_m=379.65 K, ΔH_fus=34500 J/mol, R=8.314, α=0.3
+2026-03-22 07:23:55 | INFO     | nrtl_fitting.models.nrtl  | NRTL 模型初始化完成，α = 0.30
+2026-03-22 07:23:55 | INFO     | nrtl_fitting.report.generator | 报告输出目录: /app/output
+2026-03-22 07:23:55 | INFO     | nrtl_fitting.report.generator | 文本报告已保存: output/fitting_report.txt
+2026-03-22 07:23:55 | INFO     | nrtl_fitting.report.generator | JSON 报告已保存: output/fitting_result.json
+2026-03-22 07:23:55 | INFO     | nrtl_fitting.report.generator | CSV 数据已保存 (Pandas): output/fitting_data.csv
+2026-03-22 07:23:55 | INFO     | nrtl_fitting.report.generator | 所有报告文件已生成完毕
+2026-03-22 07:23:55 | INFO     | nrtl_fitting.report.generator | 数据分析摘要已保存: output/analysis_summary.txt
+2026-03-22 07:23:55 | INFO     | nrtl_fitting.main         | 
+2026-03-22 07:23:55 | INFO     | nrtl_fitting.main         | ======================================================================
+2026-03-22 07:23:55 | INFO     | nrtl_fitting.main         | 拟合与分析完成！总耗时: 5.51 秒
+2026-03-22 07:23:55 | INFO     | nrtl_fitting.main         | ======================================================================
+2026-03-22 07:23:55 | INFO     | nrtl_fitting.main         | 拟合结果:
+2026-03-22 07:23:55 | INFO     | nrtl_fitting.main         |   Δg₁₂ = 15658.49 J/mol
+2026-03-22 07:23:55 | INFO     | nrtl_fitting.main         |   Δg₂₁ = 11747.58 J/mol
+2026-03-22 07:23:55 | INFO     | nrtl_fitting.main         |   τ₁₂ 范围: 5.8282 ~ 6.6516
+2026-03-22 07:23:55 | INFO     | nrtl_fitting.main         |   τ₂₁ 范围: 4.3725 ~ 4.9902
+2026-03-22 07:23:55 | INFO     | nrtl_fitting.main         |   AARD = -1.6086 %
+2026-03-22 07:23:55 | INFO     | nrtl_fitting.main         |   R²   = 0.86055331
+2026-03-22 07:23:55 | INFO     | nrtl_fitting.main         | 
+2026-03-22 07:23:55 | INFO     | nrtl_fitting.main         | 数据分析结果:
+2026-03-22 07:23:55 | INFO     | nrtl_fitting.main         |   ΔH_sol = -45.05 kJ/mol
+2026-03-22 07:23:55 | INFO     | nrtl_fitting.main         |   ΔS_sol = 79.23 J/(mol·K)
+2026-03-22 07:23:55 | INFO     | nrtl_fitting.main         |   ΔG_sol(298K) = -68.68 kJ/mol
+2026-03-22 07:23:55 | INFO     | nrtl_fitting.main         |   异常点数: 6
+2026-03-22 07:23:55 | INFO     | nrtl_fitting.main         | 
+2026-03-22 07:23:55 | INFO     | nrtl_fitting.main         | 输出文件:
+2026-03-22 07:23:55 | INFO     | nrtl_fitting.main         |   报告:     output/fitting_report.txt
+2026-03-22 07:23:55 | INFO     | nrtl_fitting.main         |   分析摘要: output/analysis_summary.txt
+2026-03-22 07:23:55 | INFO     | nrtl_fitting.main         |   数据:     output/fitting_result.json
+2026-03-22 07:23:55 | INFO     | nrtl_fitting.main         |   分析JSON: output/analysis_report.json
+2026-03-22 07:23:55 | INFO     | nrtl_fitting.main         |   CSV:      output/fitting_data.csv
+2026-03-22 07:23:55 | INFO     | nrtl_fitting.main         |   主数据表: output/analysis_master_data.csv
+2026-03-22 07:23:55 | INFO     | nrtl_fitting.main         |   图表:     output/figures/
+2026-03-22 07:23:55 | INFO     | nrtl_fitting.main         |   日志:     output/logs/nrtl_fitting.log
+2026-03-22 07:23:55 | INFO     | nrtl_fitting.main         | ======================================================================
+2026-03-22 07:29:25 | INFO     | nrtl_fitting.main         | ======================================================================
+2026-03-22 07:29:25 | INFO     | nrtl_fitting.main         | 壬二酸 (Azelaic Acid) / 水 (Water) 体系
+2026-03-22 07:29:25 | INFO     | nrtl_fitting.main         | NRTL 模型参数拟合程序启动
+2026-03-22 07:29:25 | INFO     | nrtl_fitting.main         | ======================================================================
+2026-03-22 07:29:25 | INFO     | nrtl_fitting.main         | ━━━ Step 1: 加载实验数据 ━━━
+2026-03-22 07:29:25 | INFO     | nrtl_fitting.data.solubility | 已加载 9 个溶解度实验数据点
+2026-03-22 07:29:25 | INFO     | nrtl_fitting.data.solubility | 温度范围: 283.15 K ~ 323.15 K
+2026-03-22 07:29:25 | INFO     | nrtl_fitting.data.solubility | 摩尔分数范围: 7.1400e-05 ~ 9.8490e-04
+2026-03-22 07:29:25 | INFO     | nrtl_fitting.main         | 
+=================================================================
+壬二酸 (Azelaic Acid) 在水中的溶解度实验数据
+=================================================================
+      温度 (K)           摩尔分数 x
+-----------------------------------
+      283.15       7.1400e-05
+      288.15       9.1890e-05
+      293.15       1.4760e-04
+      298.15       1.7030e-04
+      303.15       2.1860e-04
+      308.15       2.8910e-04
+      313.15       3.5020e-04
+      318.15       4.9740e-04
+      323.15       9.8490e-04
+-----------------------------------
+共 9 个数据点
+=================================================================
+2026-03-22 07:29:25 | INFO     | nrtl_fitting.main         | ━━━ Step 2: 初始化热力学常数 ━━━
+2026-03-22 07:29:25 | INFO     | nrtl_fitting.data.solubility | 热力学常数校验通过: T_m=379.65 K, ΔH_fus=34500 J/mol, R=8.314, α=0.3
+2026-03-22 07:29:25 | INFO     | nrtl_fitting.main         | ━━━ Step 3: 执行 NRTL 参数拟合 ━━━
+2026-03-22 07:29:25 | INFO     | nrtl_fitting.data.solubility | 热力学常数校验通过: T_m=379.65 K, ΔH_fus=34500 J/mol, R=8.314, α=0.3
+2026-03-22 07:29:25 | INFO     | nrtl_fitting.models.nrtl  | NRTL 模型初始化完成，α = 0.30
+2026-03-22 07:29:25 | INFO     | nrtl_fitting.fitting.optimizer | 优化器初始化: 9 个数据点, Δg₁₂ 范围 (-50000.0, 50000.0), Δg₂₁ 范围 (-50000.0, 50000.0)
+2026-03-22 07:29:25 | INFO     | nrtl_fitting.fitting.optimizer | ━━━ 阶段 1: 差分进化全局搜索 ━━━
+2026-03-22 07:29:27 | INFO     | nrtl_fitting.fitting.optimizer | DE 完成: Δg₁₂=15658.49, Δg₂₁=11747.58, OF=1.506495e-01, 函数评估=3450
+2026-03-22 07:29:27 | INFO     | nrtl_fitting.fitting.optimizer | ━━━ 阶段 2: L-BFGS-B 局部精细优化 ━━━
+2026-03-22 07:29:27 | INFO     | nrtl_fitting.fitting.optimizer | 局部优化完成: Δg₁₂=15658.49, Δg₂₁=11747.58, OF=1.506495e-01, 额外评估=27
+2026-03-22 07:29:27 | INFO     | nrtl_fitting.fitting.optimizer | 拟合质量: RMSD=1.0091e-08, AARD=-1.6086%, R²=0.86055331
+2026-03-22 07:29:27 | INFO     | nrtl_fitting.main         | 
+======================================================================
+NRTL 模型参数拟合结果
+壬二酸 (Azelaic Acid) / 水 (Water) 二元体系
+======================================================================
+
+━━━ 拟合参数 (能量交互参数) ━━━
+  Δg₁₂ (dg_12)  =     15658.49 J/mol
+  Δg₂₁ (dg_21)  =     11747.58 J/mol
+  α             = 0.3 (fixed)
+
+━━━ 拟合质量指标 ━━━
+  目标函数值 (OF)        = 1.506495e-01
+  均方根偏差 (RMSD)      = 1.009126e-08
+  平均绝对相对偏差 (AARD) = -1.6086 %
+  决定系数 (R²)          = 0.86055331
+
+━━━ 逐点对比 ━━━
+       T (K)         x_exp        x_calc      RD (%)       τ₁₂       τ₂₁
+  ----------------------------------------------------------------------
+      283.15    7.1400e-05    6.6612e-05     -6.7057    6.6516    4.9902
+      288.15    9.1890e-05    9.2309e-05      0.4556    6.5361    4.9037
+      293.15    1.4760e-04    1.2654e-04    -14.2661    6.4247    4.8200
+      298.15    1.7030e-04    1.7172e-04      0.8333    6.3169    4.7392
+      303.15    2.1860e-04    2.3080e-04      5.5832    6.2127    4.6610
+      308.15    2.8910e-04    3.0745e-04      6.3466    6.1119    4.5854
+      313.15    3.5020e-04    4.0611e-04     15.9655    6.0143    4.5122
+      318.15    4.9740e-04    5.3224e-04      7.0038    5.9198    4.4413
+      323.15    9.8490e-04    6.9245e-04    -29.6935    5.8282    4.3725
+  ----------------------------------------------------------------------
+                最大相对偏差 = 29.6935 %
+                最小相对偏差 = 0.4556 %
+
+  收敛信息: CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH
+  迭代次数: 1
+======================================================================
+2026-03-22 07:29:27 | INFO     | nrtl_fitting.main         | ━━━ Step 4: 生成可视化图表 ━━━
+2026-03-22 07:29:27 | INFO     | nrtl_fitting.data.solubility | 热力学常数校验通过: T_m=379.65 K, ΔH_fus=34500 J/mol, R=8.314, α=0.3
+2026-03-22 07:29:27 | INFO     | nrtl_fitting.models.nrtl  | NRTL 模型初始化完成，α = 0.30
+2026-03-22 07:29:27 | INFO     | nrtl_fitting.visualization.plotter | 图表输出目录: /app/output/figures
+2026-03-22 07:29:27 | INFO     | nrtl_fitting.visualization.plotter | 溶解度对比图已保存: output/figures/solubility_comparison.png
+2026-03-22 07:29:28 | INFO     | nrtl_fitting.visualization.plotter | 相对偏差图已保存: output/figures/relative_deviation.png
+2026-03-22 07:29:28 | INFO     | nrtl_fitting.visualization.plotter | van't Hoff 图已保存: output/figures/vant_hoff_plot.png
+2026-03-22 07:29:29 | INFO     | nrtl_fitting.visualization.plotter | 综合仪表板已保存: output/figures/fitting_dashboard.png
+2026-03-22 07:29:29 | INFO     | nrtl_fitting.visualization.plotter | 所有图表已生成完毕
+2026-03-22 07:29:29 | INFO     | nrtl_fitting.main         | ━━━ Step 5: 数据分析 (Pandas) ━━━
+2026-03-22 07:29:29 | INFO     | nrtl_fitting.data.solubility | 热力学常数校验通过: T_m=379.65 K, ΔH_fus=34500 J/mol, R=8.314, α=0.3
+2026-03-22 07:29:29 | INFO     | nrtl_fitting.models.nrtl  | NRTL 模型初始化完成，α = 0.30
+2026-03-22 07:29:29 | INFO     | nrtl_fitting.analysis.analyzer | 分析器初始化完成，共 9 个数据点
+2026-03-22 07:29:29 | INFO     | nrtl_fitting.analysis.analyzer | ==================================================
+2026-03-22 07:29:29 | INFO     | nrtl_fitting.analysis.analyzer | 开始执行完整数据分析...
+2026-03-22 07:29:29 | INFO     | nrtl_fitting.analysis.analyzer | ==================================================
+2026-03-22 07:29:29 | INFO     | nrtl_fitting.analysis.analyzer | 主数据表构建完成: 9 行 × 19 列
+2026-03-22 07:29:29 | INFO     | nrtl_fitting.analysis.analyzer | 描述性统计完成
+2026-03-22 07:29:29 | INFO     | nrtl_fitting.analysis.analyzer | van't Hoff 回归: ΔH_sol=-45053.8 J/mol, ΔS_sol=79.23 J/(mol·K), R²=0.966423
+2026-03-22 07:29:29 | INFO     | nrtl_fitting.analysis.analyzer | 残差分析: 均值偏差=-0.0161%, 标准差=0.1362%, 偏度=-1.1044
+2026-03-22 07:29:29 | WARNING  | nrtl_fitting.analysis.analyzer | 检测到 6 个潜在异常点 (Z>0.5): 索引 [2, 4, 5, 6, 7, 8]
+2026-03-22 07:29:29 | INFO     | nrtl_fitting.analysis.analyzer | 灵敏度分析完成: Δg₁₂ 梯度=0.002680, Δg₂₁ 梯度=0.023851
+2026-03-22 07:29:29 | INFO     | nrtl_fitting.analysis.analyzer | 温度分组分析完成: 3 个分组
+2026-03-22 07:29:29 | INFO     | nrtl_fitting.analysis.analyzer | 相关性分析完成: 7 × 7 矩阵
+2026-03-22 07:29:29 | INFO     | nrtl_fitting.analysis.analyzer | 完整数据分析已完成
+2026-03-22 07:29:29 | INFO     | nrtl_fitting.analysis.analyzer | 主数据表已导出: output/analysis_master_data.csv
+2026-03-22 07:29:29 | INFO     | nrtl_fitting.analysis.analyzer | ==================================================
+2026-03-22 07:29:29 | INFO     | nrtl_fitting.analysis.analyzer | 开始执行完整数据分析...
+2026-03-22 07:29:29 | INFO     | nrtl_fitting.analysis.analyzer | ==================================================
+2026-03-22 07:29:29 | INFO     | nrtl_fitting.analysis.analyzer | 描述性统计完成
+2026-03-22 07:29:29 | INFO     | nrtl_fitting.analysis.analyzer | van't Hoff 回归: ΔH_sol=-45053.8 J/mol, ΔS_sol=79.23 J/(mol·K), R²=0.966423
+2026-03-22 07:29:29 | INFO     | nrtl_fitting.analysis.analyzer | 残差分析: 均值偏差=-0.0161%, 标准差=0.1362%, 偏度=-1.1044
+2026-03-22 07:29:29 | WARNING  | nrtl_fitting.analysis.analyzer | 检测到 6 个潜在异常点 (Z>0.5): 索引 [2, 4, 5, 6, 7, 8]
+2026-03-22 07:29:29 | INFO     | nrtl_fitting.analysis.analyzer | 灵敏度分析完成: Δg₁₂ 梯度=0.002680, Δg₂₁ 梯度=0.023851
+2026-03-22 07:29:29 | INFO     | nrtl_fitting.analysis.analyzer | 温度分组分析完成: 3 个分组
+2026-03-22 07:29:29 | INFO     | nrtl_fitting.analysis.analyzer | 相关性分析完成: 7 × 7 矩阵
+2026-03-22 07:29:29 | INFO     | nrtl_fitting.analysis.analyzer | 完整数据分析已完成
+2026-03-22 07:29:29 | INFO     | nrtl_fitting.analysis.analyzer | 分析报告 JSON 已导出: output/analysis_report.json
+2026-03-22 07:29:29 | INFO     | nrtl_fitting.main         |   DataFrame 形状: (9, 19)
+2026-03-22 07:29:29 | INFO     | nrtl_fitting.main         |   热力学推导: ΔH_sol=-45053.83 J/mol, ΔS_sol=79.2326 J/(mol·K)
+2026-03-22 07:29:29 | INFO     | nrtl_fitting.main         | ━━━ Step 6: 生成分析图表 ━━━
+2026-03-22 07:29:29 | INFO     | nrtl_fitting.visualization.plotter | 相关性热力图已保存: output/figures/correlation_heatmap.png
+2026-03-22 07:29:29 | INFO     | nrtl_fitting.visualization.plotter | 灵敏度分析图已保存: output/figures/parameter_sensitivity.png
+2026-03-22 07:29:30 | INFO     | nrtl_fitting.visualization.plotter | 残差分布图已保存: output/figures/residual_distribution.png
+2026-03-22 07:29:30 | INFO     | nrtl_fitting.visualization.plotter | 分析综合仪表板已保存: output/figures/analysis_dashboard.png
+2026-03-22 07:29:30 | INFO     | nrtl_fitting.visualization.plotter | 所有分析图表已生成完毕
+2026-03-22 07:29:30 | INFO     | nrtl_fitting.main         | ━━━ Step 7: 生成报告 ━━━
+2026-03-22 07:29:30 | INFO     | nrtl_fitting.data.solubility | 热力学常数校验通过: T_m=379.65 K, ΔH_fus=34500 J/mol, R=8.314, α=0.3
+2026-03-22 07:29:30 | INFO     | nrtl_fitting.models.nrtl  | NRTL 模型初始化完成，α = 0.30
+2026-03-22 07:29:30 | INFO     | nrtl_fitting.report.generator | 报告输出目录: /app/output
+2026-03-22 07:29:30 | INFO     | nrtl_fitting.report.generator | 文本报告已保存: output/fitting_report.txt
+2026-03-22 07:29:30 | INFO     | nrtl_fitting.report.generator | JSON 报告已保存: output/fitting_result.json
+2026-03-22 07:29:30 | INFO     | nrtl_fitting.report.generator | CSV 数据已保存 (Pandas): output/fitting_data.csv
+2026-03-22 07:29:30 | INFO     | nrtl_fitting.report.generator | 所有报告文件已生成完毕
+2026-03-22 07:29:30 | INFO     | nrtl_fitting.report.generator | 数据分析摘要已保存: output/analysis_summary.txt
+2026-03-22 07:29:30 | INFO     | nrtl_fitting.main         | 
+2026-03-22 07:29:30 | INFO     | nrtl_fitting.main         | ======================================================================
+2026-03-22 07:29:30 | INFO     | nrtl_fitting.main         | 拟合与分析完成！总耗时: 5.82 秒
+2026-03-22 07:29:30 | INFO     | nrtl_fitting.main         | ======================================================================
+2026-03-22 07:29:30 | INFO     | nrtl_fitting.main         | 拟合结果:
+2026-03-22 07:29:30 | INFO     | nrtl_fitting.main         |   Δg₁₂ = 15658.49 J/mol
+2026-03-22 07:29:30 | INFO     | nrtl_fitting.main         |   Δg₂₁ = 11747.58 J/mol
+2026-03-22 07:29:30 | INFO     | nrtl_fitting.main         |   τ₁₂ 范围: 5.8282 ~ 6.6516
+2026-03-22 07:29:30 | INFO     | nrtl_fitting.main         |   τ₂₁ 范围: 4.3725 ~ 4.9902
+2026-03-22 07:29:30 | INFO     | nrtl_fitting.main         |   AARD = -1.6086 %
+2026-03-22 07:29:30 | INFO     | nrtl_fitting.main         |   R²   = 0.86055331
+2026-03-22 07:29:30 | INFO     | nrtl_fitting.main         | 
+2026-03-22 07:29:30 | INFO     | nrtl_fitting.main         | 数据分析结果:
+2026-03-22 07:29:30 | INFO     | nrtl_fitting.main         |   ΔH_sol = -45.05 kJ/mol
+2026-03-22 07:29:30 | INFO     | nrtl_fitting.main         |   ΔS_sol = 79.23 J/(mol·K)
+2026-03-22 07:29:30 | INFO     | nrtl_fitting.main         |   ΔG_sol(298K) = -68.68 kJ/mol
+2026-03-22 07:29:30 | INFO     | nrtl_fitting.main         |   异常点数: 6
+2026-03-22 07:29:30 | INFO     | nrtl_fitting.main         | 
+2026-03-22 07:29:30 | INFO     | nrtl_fitting.main         | 输出文件:
+2026-03-22 07:29:30 | INFO     | nrtl_fitting.main         |   报告:     output/fitting_report.txt
+2026-03-22 07:29:30 | INFO     | nrtl_fitting.main         |   分析摘要: output/analysis_summary.txt
+2026-03-22 07:29:30 | INFO     | nrtl_fitting.main         |   数据:     output/fitting_result.json
+2026-03-22 07:29:30 | INFO     | nrtl_fitting.main         |   分析JSON: output/analysis_report.json
+2026-03-22 07:29:30 | INFO     | nrtl_fitting.main         |   CSV:      output/fitting_data.csv
+2026-03-22 07:29:30 | INFO     | nrtl_fitting.main         |   主数据表: output/analysis_master_data.csv
+2026-03-22 07:29:30 | INFO     | nrtl_fitting.main         |   图表:     output/figures/
+2026-03-22 07:29:30 | INFO     | nrtl_fitting.main         |   日志:     output/logs/nrtl_fitting.log
+2026-03-22 07:29:30 | INFO     | nrtl_fitting.main         | ======================================================================

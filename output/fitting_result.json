@@ -1,0 +1,82 @@
+{
+  "metadata": {
+    "title": "NRTL Parameter Fitting Report",
+    "system": "Azelaic Acid / Water",
+    "solute": "Azelaic Acid (C9H16O4)",
+    "solvent": "Water (H2O)",
+    "generated_at": "2026-03-22T15:29:30.867715+08:00"
+  },
+  "known_parameters": {
+    "melting_point_K": 379.65,
+    "fusion_enthalpy_J_per_mol": 34500.0,
+    "gas_constant_J_per_mol_K": 8.314,
+    "nrtl_alpha": 0.3
+  },
+  "fitted_parameters": {
+    "dg_12_J_per_mol": 11747.576,
+    "dg_21_J_per_mol": 15658.4856
+  },
+  "fitting_quality": {
+    "objective_function_value": 0.1506495189798451,
+    "RMSD": 1.0091258960481389e-08,
+    "AARD_percent": -1.608581,
+    "R_squared": 0.8605533147,
+    "max_relative_deviation_percent": 29.693464
+  },
+  "data_comparison": [
+    {
+      "temperature_K": 283.15,
+      "x_experimental": 7.14e-05,
+      "x_calculated": 6.66121127982882e-05,
+      "relative_deviation_percent": -6.705724
+    },
+    {
+      "temperature_K": 288.15,
+      "x_experimental": 9.189e-05,
+      "x_calculated": 9.230866205693373e-05,
+      "relative_deviation_percent": 0.455612
+    },
+    {
+      "temperature_K": 293.15,
+      "x_experimental": 0.0001476,
+      "x_calculated": 0.00012654324577243768,
+      "relative_deviation_percent": -14.266094
+    },
+    {
+      "temperature_K": 298.15,
+      "x_experimental": 0.0001703,
+      "x_calculated": 0.00017171909101289319,
+      "relative_deviation_percent": 0.833289
+    },
+    {
+      "temperature_K": 303.15,
+      "x_experimental": 0.0002186,
+      "x_calculated": 0.00023080487916312325,
+      "relative_deviation_percent": 5.583202
+    },
+    {
+      "temperature_K": 308.15,
+      "x_experimental": 0.0002891,
+      "x_calculated": 0.0003074481485174348,
+      "relative_deviation_percent": 6.346644
+    },
+    {
+      "temperature_K": 313.15,
+      "x_experimental": 0.0003502,
+      "x_calculated": 0.00040611133152738965,
+      "relative_deviation_percent": 15.965543
+    },
+    {
+      "temperature_K": 318.15,
+      "x_experimental": 0.0004974,
+      "x_calculated": 0.0005322367098667033,
+      "relative_deviation_percent": 7.003762
+    },
+    {
+      "temperature_K": 323.15,
+      "x_experimental": 0.0009849,
+      "x_calculated": 0.0006924490745308734,
+      "relative_deviation_percent": -29.693464
+    }
+  ]
+}

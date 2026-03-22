@@ -1,0 +1,21 @@
+name: label-3734
+
+services:
+  nrtl-fitting:
+    build: .
+    container_name: nrtl-fitting-app
+    volumes:
+      - ./output:/app/output
+    environment:
+      - PYTHONUNBUFFERED=1
+      - PYTHONIOENCODING=utf-8
+
+  nrtl-test:
+    build: .
+    container_name: nrtl-test-runner
+    command: ["python", "-m", "pytest", "tests/", "-v", "--tb=short"]
+    environment:
+      - PYTHONUNBUFFERED=1
+      - PYTHONIOENCODING=utf-8
+    profiles:
+      - test
