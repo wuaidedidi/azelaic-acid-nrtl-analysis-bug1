@@ -240,7 +240,7 @@ class ReportGenerator:
         })
 
         filepath = self.output_dir / "fitting_data.csv"
-        df.to_csv(filepath, index=False, float_format="%.1e")
+        df.to_csv(filepath, index=False, float_format="%.6e")
         logger.info("CSV 数据已保存 (Pandas): %s", filepath)
         return str(filepath)
 
