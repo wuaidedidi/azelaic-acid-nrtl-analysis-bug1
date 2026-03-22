@@ -103,7 +103,7 @@ class SolubilityAnalyzer:
                 T, r.parameters.dg_12, r.parameters.dg_21
             )
             gamma_values[i] = self.model.activity_coefficient(
-                r.x_experimental[i], tau_12, tau_21
+                r.x_calculated[i], tau_12, tau_21
             )
 
         df = pd.DataFrame({
