@@ -135,7 +135,7 @@ class ResultPlotter:
         """
         fig, ax = plt.subplots(figsize=(10, 6))
 
-        rd_percent = result.relative_deviations
+        rd_percent = result.relative_deviations * 100
 
         colors = ["#27AE60" if abs(v) < 10 else "#E74C3C" for v in rd_percent]
         bars = ax.bar(
@@ -146,7 +146,7 @@ class ResultPlotter:
         ax.set_xticks(range(len(result.temperatures)))
         ax.set_xticklabels([f"{T:.1f}" for T in result.temperatures], rotation=45)
         ax.set_xlabel("Temperature (K)")
-        ax.set_ylabel("Absolute Deviation (mol/mol)")
+        ax.set_ylabel("Relative Deviation (%)")
         ax.set_title("Relative Deviation of NRTL Model Fitting")
         ax.axhline(y=0, color="black", linewidth=1.0)
         ax.axhline(y=10, color="red", linewidth=0.8, linestyle="--", alpha=0.5, label="±10% threshold")
@@ -398,7 +398,7 @@ class ResultPlotter:
         rd = report.master_df["rd_percent"].values
         fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(14, 6))
 
-        ax1.hist(rd, bins=2, color="#3498DB", edgecolor="black",
+        ax1.hist(rd, bins="auto", color="#3498DB", edgecolor="black",
                  alpha=0.7, density=True, label="Observed")
         mu, sigma = rd.mean(), rd.std()
         if sigma > 0:
