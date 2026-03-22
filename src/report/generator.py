@@ -339,10 +339,10 @@ class ReportGenerator:
             f"  Δg₂₁ 基准值: {analysis_report.sensitivity_dg21.base_value:.2f} J/mol",
             f"  Δg₂₁ 灵敏度梯度: {analysis_report.sensitivity_dg21.gradient:.6f}",
             "",
-            f"  Δg₁₂ +10% 扰动 AARD 范围: "
+            f"  Δg₁₂ ±10% 扰动 AARD 范围: "
             f"{analysis_report.sensitivity_dg12.aard_values.min():.4f}% ~ "
             f"{analysis_report.sensitivity_dg12.aard_values.max():.4f}%",
-            f"  Δg₂₁ +10% 扰动 AARD 范围: "
+            f"  Δg₂₁ ±10% 扰动 AARD 范围: "
             f"{analysis_report.sensitivity_dg21.aard_values.min():.4f}% ~ "
             f"{analysis_report.sensitivity_dg21.aard_values.max():.4f}%",
             "",

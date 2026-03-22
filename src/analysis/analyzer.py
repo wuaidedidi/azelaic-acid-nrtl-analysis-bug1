@@ -130,7 +130,7 @@ class SolubilityAnalyzer:
         bins = pd.cut(
             df["T_K"],
             bins=[280, 295, 310, 325],
-            labels=["低温(280-295K)", "高温(310-325K)", "中温(295-310K)"],
+            labels=["低温(280-295K)", "中温(295-310K)", "高温(310-325K)"],
         )
         df["temp_group"] = bins
 
@@ -201,7 +201,7 @@ class SolubilityAnalyzer:
         )
         return result
 
-    def detect_outliers(self, z_threshold: float = 0.5) -> List[int]:
+    def detect_outliers(self, z_threshold: float = 2.0) -> List[int]:
         """基于 Z-score 的异常值检测"""
         rd = self.master_df["rd_percent"]
         z_scores = np.abs(stats.zscore(rd))
@@ -234,7 +234,7 @@ class SolubilityAnalyzer:
         temperatures = self.result.temperatures
         x_exp = self.result.x_experimental
 
-        perturbations = np.linspace(0, perturbation_range, n_points)
+        perturbations = np.linspace(-perturbation_range, perturbation_range, n_points)
 
         def compute_aard(dg12: float, dg21: float) -> float:
             x_calc = self.model.calculate_solubility_batch(temperatures, dg12, dg21)
